@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="demolition.AppTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-11-05T01:15:37" hostname="Coopers-Air.modem" time="21.576">
+  <properties/>
+  <testcase name="PlayerControlTest()" classname="demolition.AppTest" time="12.613"/>
+  <testcase name="SetupTest()" classname="demolition.AppTest" time="2.23"/>
+  <testcase name="TimeoutTest()" classname="demolition.AppTest" time="2.265"/>
+  <testcase name="OutOfLivesTest()" classname="demolition.AppTest" time="2.213"/>
+  <testcase name="NextLevelTest()" classname="demolition.AppTest" time="2.221"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

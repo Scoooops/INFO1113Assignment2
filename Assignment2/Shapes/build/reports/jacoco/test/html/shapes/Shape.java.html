@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Shape.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Shapes</a> &gt; <a href="index.source.html" class="el_package">shapes</a> &gt; <span class="el_source">Shape.java</span></div><h1>Shape.java</h1><pre class="source lang-java linenums">package shapes;
+
+import processing.core.PImage;
+import processing.core.PApplet;
+
+/**
+ * Represents an abstract Shape object that is inherited by Square and Circle.
+ */
+public abstract class Shape {
+    
+    /**
+     * The Shape's x-coordinate.
+     */
+    protected int x;
+    
+    /**
+     * The Shape's y-coordinate.
+     */
+    protected int y;
+
+    /**
+     * The Shape's sprite.
+     */
+    private PImage sprite;
+
+    /**
+     * Creates a new Shape object.
+     * 
+     * @param x The x-coordinate.
+     * @param y The y-coordinate.
+     */
+<span class="fc" id="L32">    public Shape(int x, int y) {</span>
+<span class="fc" id="L33">        this.x = x;</span>
+<span class="fc" id="L34">        this.y = y;</span>
+<span class="fc" id="L35">    }</span>
+
+    /**
+     * Sets the shape's sprite.
+     * 
+     * @param sprite The new sprite to use.
+     */
+    public void setSprite(PImage sprite) {
+<span class="nc" id="L43">        this.sprite = sprite;</span>
+<span class="nc" id="L44">    }</span>
+
+    /**
+     * Updates the shape every frame.
+     */
+    public abstract void tick();
+
+    /**
+     * Draws the shape to the screen.
+     * 
+     * @param app The window to draw onto.
+     */
+    public void draw(PApplet app) {
+        // The image() method is used to draw PImages onto the screen.
+        // The first argument is the image, the second and third arguments are coordinates
+<span class="nc" id="L59">        app.image(this.sprite, this.x, this.y);</span>
+<span class="nc" id="L60">    }</span>
+
+    /**
+     * Gets the x-coordinate.
+     * @return The x-coordinate.
+     */
+    public int getX() {
+<span class="fc" id="L67">        return this.x;</span>
+    }
+
+    /**
+     * Returns the y-coordinate.
+     * @return The y-coordinate.
+     */
+    public int getY() {
+<span class="nc" id="L75">        return this.y;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

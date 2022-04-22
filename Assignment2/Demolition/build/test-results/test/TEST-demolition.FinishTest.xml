@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="demolition.FinishTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-11-05T01:15:59" hostname="Coopers-Air.modem" time="0.001">
+  <properties/>
+  <testcase name="Test()" classname="demolition.FinishTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Player.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Demolition</a> &gt; <a href="index.source.html" class="el_package">demolition</a> &gt; <span class="el_source">Player.java</span></div><h1>Player.java</h1><pre class="source lang-java linenums">package demolition;
+
+import processing.core.PApplet;
+
+
+/**
+ * Represents the player.
+ */
+public class Player extends Sprite {
+
+    /**
+    * An integer that tracks the iterations of the sprite.
+    */
+    private int timer;
+
+    /**
+    * The direction which the player is facing.
+    */
+    private String direction;
+
+    /**
+    * Whether or not a key has been pressed.
+    */
+    private boolean key_pressed;
+
+
+    /**
+     * Creates a new player character at (x, y).
+     * @param x The x-coordinate integer.
+     * @param y The y-coordinate integer.
+     */
+    public Player(int x, int y) {
+<span class="fc" id="L33">        super(x, y);</span>
+<span class="fc" id="L34">        this.timer = 0;</span>
+<span class="fc" id="L35">        key_pressed = false;</span>
+<span class="fc" id="L36">        direction = &quot;down&quot;;</span>
+<span class="fc" id="L37">    }</span>
+
+    /**
+     * Updates the player constantly.
+     */
+    public void tick() {
+        // Increments the timer
+<span class="fc" id="L44">        this.timer++;</span>
+
+<span class="fc bfc" id="L46" title="All 2 branches covered.">        if (key_pressed == true) {</span>
+<span class="fc bfc" id="L47" title="All 2 branches covered.">            if (direction.equals(&quot;left&quot;)) {</span>
+<span class="fc" id="L48">                this.x -= 32;</span>
+<span class="fc" id="L49">                key_pressed = false;</span>
+            }
+<span class="fc bfc" id="L51" title="All 2 branches covered.">            else if (direction.equals(&quot;right&quot;)) {</span>
+<span class="fc" id="L52">                this.x += 32;</span>
+<span class="fc" id="L53">                key_pressed = false;</span>
+            }
+<span class="fc bfc" id="L55" title="All 2 branches covered.">            else if (direction.equals(&quot;up&quot;)) {</span>
+<span class="fc" id="L56">                this.y -= 32;</span>
+<span class="fc" id="L57">                key_pressed = false;</span>
+            }
+            else {
+<span class="fc" id="L60">                this.y += 32;</span>
+<span class="fc" id="L61">                key_pressed = false;</span>
+            }
+        }
+<span class="fc" id="L64">    }</span>
+
+    /**
+     * Returns the timer value.
+     * @return The current value of the timer.
+     */
+    public int getTimer() {
+        // Increments the timer
+<span class="fc" id="L72">        return this.timer;</span>
+    }
+
+    /**
+     * Called in App when the left key is pressed.
+     */
+    public void pressLeft() {
+<span class="fc" id="L79">        this.direction = &quot;left&quot;;</span>
+<span class="fc" id="L80">        key_pressed = true;</span>
+<span class="fc" id="L81">    }</span>
+
+    /**
+     * Called in App when the right key is pressed.
+     */
+    public void pressRight() {
+<span class="fc" id="L87">        this.direction = &quot;right&quot;;</span>
+<span class="fc" id="L88">        key_pressed = true;</span>
+<span class="fc" id="L89">    }</span>
+
+    /**
+     * Called in App when the up key is pressed.
+     */
+    public void pressUp() {
+<span class="fc" id="L95">        this.direction = &quot;up&quot;;</span>
+<span class="fc" id="L96">        key_pressed = true;</span>
+<span class="fc" id="L97">    }</span>
+
+    /**
+     * Called in App when the down key is pressed.
+     */
+    public void pressDown() {
+<span class="fc" id="L103">        this.direction = &quot;down&quot;;</span>
+<span class="fc" id="L104">        key_pressed = true;</span>
+<span class="fc" id="L105">    }</span>
+
+    /**
+     * Resets the player to its original position.
+     * @param x The x-coordinate integer.
+     * @param y The y-coordinate integer.
+     */
+    public void reset(int x, int y) {
+<span class="fc" id="L113">        this.x = x;</span>
+<span class="fc" id="L114">        this.y = y;</span>
+<span class="fc" id="L115">        direction = &quot;down&quot;;</span>
+<span class="fc" id="L116">    }</span>
+
+    /**
+     * Returns the key_pressed value.
+     * @return True if a key has been pressed, false if otherwise.
+     */
+    public boolean getKeyPressed() {
+<span class="fc" id="L123">        return key_pressed;</span>
+    }
+
+    /**
+     * Returns the direction value.
+     * @return The direction of the sprite.
+     */
+    public String getDirection() {
+<span class="fc" id="L131">        return direction;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

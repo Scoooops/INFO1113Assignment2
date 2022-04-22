@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Bomb.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Demolition</a> &gt; <a href="index.source.html" class="el_package">demolition</a> &gt; <span class="el_source">Bomb.java</span></div><h1>Bomb.java</h1><pre class="source lang-java linenums">package demolition;
+
+import processing.core.PApplet;
+
+
+/**
+ * Represents a bomb.
+ */
+public class Bomb extends Sprite {
+
+    /**
+    * An integer that tracks the iterations of the sprite.
+    */
+    private int timer;
+
+    /**
+    * Time since the bomb was placed.
+    */
+    private Long time_placed;
+
+    /**
+     * Creates a new bomb at (x, y).
+     * @param x The x-coordinate integer.
+     * @param y The y-coordinate integer.
+     */
+    public Bomb(int x, int y) {
+<span class="fc" id="L27">        super(x, y);</span>
+<span class="fc" id="L28">        this.timer = 0;</span>
+<span class="fc" id="L29">        time_placed = System.currentTimeMillis();</span>
+<span class="fc" id="L30">    }</span>
+
+    /**
+     * Updates the sprite constantly.
+     */
+    public void tick() {
+        // Increments the timer
+<span class="fc" id="L37">        this.timer++;</span>
+<span class="fc" id="L38">    }</span>
+
+    /**
+     * Checks how long since the bomb was placed.
+     * @return The time since the bomb was placed.
+     */
+    public long timePlaced() {
+<span class="fc" id="L45">        return time_placed;</span>
+    }
+
+    /**
+     * Returns the timer value.
+     * @return The current value of the timer.
+     */
+    public int getTimer() {
+        // Increments the timer
+<span class="fc" id="L54">        return this.timer;</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
